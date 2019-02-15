@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.chen.dao.UserDao;
 import com.chen.entity.User;
-import com.mysql.cj.core.util.StringUtils;
+import com.mysql.cj.util.StringUtils;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserService {
 	public int userAdd(User user) throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println(user.toString());
-		if (user==null||"".equals(user)) {
+		if (user==null||"".equals(user.toString())) {
 			System.out.println("user can not be empty");
 			return 0;
 		}
