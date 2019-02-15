@@ -7,8 +7,9 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>maven_ssm_demo1</name>
   <url>http://maven.apache.org</url>
-
-  <properties>
+	
+  <properties>     
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>     
   	<!-- spring版本 -->
   	<spring.version>5.0.0.RELEASE</spring.version>
   	<!-- mybatis版本号 -->
@@ -93,7 +94,7 @@
     <dependency> 
         <groupId>mysql</groupId> 
         <artifactId>mysql-connector-java</artifactId> 
-        <version>5.1.30</version> 
+        <version>6.0.6</version> 
     </dependency> 
     <!-- 导入dbcp的jar包，用来在applicationContext.xml中配置数据库 --> 
     <dependency> 
@@ -153,9 +154,26 @@
         <artifactId>commons-codec</artifactId> 
         <version>1.9</version> 
     </dependency>
+    <!-- c3p0 数据库连接池 -->
+        <dependency>
+            <groupId>com.mchange</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>0.9.5.2</version>
+        </dependency>
   </dependencies>
   
   <build>
     <finalName>maven_ssm_demo1</finalName>
+    <plugins>
+    	<plugin>
+    		<groupId>org.apache.maven.plugins</groupId>
+    		<artifactId>maven-compiler-plugin</artifactId>
+    		<version>2.3.2</version>
+    		<configuration>
+    			<source>1.8</source>
+    			<target>1.8</target>
+    		</configuration>
+    	</plugin>
+    </plugins>
   </build>
 </project>

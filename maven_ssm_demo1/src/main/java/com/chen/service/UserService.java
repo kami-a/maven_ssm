@@ -7,4 +7,5 @@ import com.chen.entity.User;
 @Service
 public interface UserService {
 	public User userLogin(String name,String password) throws Exception;
+	public int userAdd(User user) throws Exception;
 }

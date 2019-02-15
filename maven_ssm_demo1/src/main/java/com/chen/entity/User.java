@@ -4,6 +4,11 @@ public class User {
 	private String name;
 	private String password;
 	private int id;
+	public User(String name,String password) {
+		// TODO Auto-generated constructor stub
+		setName(name);
+		setPassword(password);
+	}
 	public String getName() {
 		return name;
 	}
