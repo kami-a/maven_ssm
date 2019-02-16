@@ -4,6 +4,21 @@ public class User {
 	private String name;
 	private String password;
 	private int id;
+	private String sex;
+	private String tel;
+	
+	public String getSex() {
+		return sex;
+	}
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+	public String getTel() {
+		return tel;
+	}
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
 	public User(String name,String password) {
 		// TODO Auto-generated constructor stub
 		setName(name);

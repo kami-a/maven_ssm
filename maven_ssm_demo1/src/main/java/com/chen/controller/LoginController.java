@@ -1,11 +1,14 @@
 package com.chen.controller;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.chen.entity.User;
 import com.chen.service.UserService;
+import com.chen.util.JsonUtil;
 
 @Controller
 public class LoginController {
@@ -19,13 +22,14 @@ public class LoginController {
     }
 
     @RequestMapping(value = "login.do")
-    public String login(String name, String password){
+    public String login(String name, String password,HttpServletResponse response){
         try {
             User user = userService.userLogin(name, password);
             if(user == null){
                 System.out.println("登陆失败1");
             }else {
                 System.out.println("登陆成功");
+                JsonUtil.userToJson(user, response);
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block
