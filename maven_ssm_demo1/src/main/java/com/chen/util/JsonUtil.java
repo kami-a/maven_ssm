@@ -16,12 +16,12 @@ public class JsonUtil {
 	 * @param response
 	 * @throws Exception
 	 */
-	public static void userToJson(User user, HttpServletResponse response) throws Exception{
-		response.setContentType("text/json");
-		response.setHeader("Cache-Control", "no-cache");
-	    response.setCharacterEncoding("UTF-8");
+	public static String userToJson(User user) throws Exception{
+//		response.setContentType("text/json");
+//		response.setHeader("Cache-Control", "no-cache");
+//	    response.setCharacterEncoding("UTF-8");
 	    
-	    PrintWriter writer = response.getWriter();
+//	    PrintWriter writer = response.getWriter();
 	    
 	    String json = JSONObject.toJSONString(user, 
 				SerializerFeature.WriteMapNullValue,
@@ -30,8 +30,9 @@ public class JsonUtil {
 				SerializerFeature.WriteNullStringAsEmpty,
 				SerializerFeature.WriteNullBooleanAsFalse,
 				SerializerFeature.DisableCircularReferenceDetect);
-    	writer.write(json);   	
-    	writer.close();
+	    return json;
+//    	writer.write(json);   	
+//    	writer.close();
 	}
 
 }

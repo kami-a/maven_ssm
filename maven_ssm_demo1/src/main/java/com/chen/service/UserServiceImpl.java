@@ -1,5 +1,7 @@
 package com.chen.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -36,5 +38,9 @@ public class UserServiceImpl implements UserService {
 		int a = userDao.insertUser(user);
 		return a;
 	}
-
+	@Override
+	public List<User> showAll() throws Exception {
+		// TODO Auto-generated method stub
+		return userDao.selectAllUser();
+	}
 }
