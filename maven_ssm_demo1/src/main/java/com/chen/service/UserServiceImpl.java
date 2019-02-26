@@ -13,6 +13,8 @@ import com.mysql.cj.util.StringUtils;
 public class UserServiceImpl implements UserService {
 	@Autowired
 	UserDao userDao;
+	
+	//实现登录
 	public User userLogin(String name, String password) throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println(name+" "+password);
@@ -25,19 +27,26 @@ public class UserServiceImpl implements UserService {
 			return null;
 		}
 		User user=userDao.selectUserByName(name);
-		return user;
+		if (user.getPassword().equals(password)) {
+			return user;
+		}
+		return null;
 	}
+	
+	//实现添加账号
 	@Override
 	public int userAdd(User user) throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println(user.toString());
 		if (user==null||"".equals(user.toString())) {
-			System.out.println("user can not be empty");
+			System.out.println("注册 账号密码不可为空");
 			return 0;
 		}
 		int a = userDao.insertUser(user);
 		return a;
 	}
+	
+	//实现取数据
 	@Override
 	public List<User> showAll() throws Exception {
 		// TODO Auto-generated method stub

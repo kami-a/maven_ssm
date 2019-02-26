@@ -5,7 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <script type="text/javascript" src="./js/jquery.min.js"></script>
-<!-- <script type="text/javascript">
+<!-- 检测jQuery是否引入
+<script type="text/javascript">
 if(typeof jQuery == 'undefined'){
 	window.alert("没有jquery");
 }else{
@@ -18,7 +19,7 @@ document.getElementById("showAll").onclick=function(){
 	/* window.alert("dianjile"); */
 	 $.ajax({
 		type:"POST",
-		url:"showAll.do",
+		url:"/maven_ssm_demo1/user/showAll.do",
 		dataType:"json",
 		data:{},
 		success:function(returnMsg){
@@ -43,13 +44,15 @@ document.getElementById("showAll").onclick=function(){
 });
 
 </script>
-<title>show all</title>
+<title>所有用户</title>
 </head>
 <body>
-<button id="showAll">show all</button><br />
+<button id="showAll">展示所有用户信息</button><br>
+<a href="login.jsp">登录</a>
+<a href="regedit.jsp">注册</a><br>
 <table id="tbl" align="center">
  
-        <caption>User Account Information</caption>
+        <caption>用户信息表</caption>
  
           <tr>
             <th>ID</th>
