@@ -37,7 +37,7 @@ document.getElementById("showAll").onclick=function(){
 			}
 			},
 		error:function(){
-			alert("fail");
+			alert("请登录后重试");
 			}
 		});
 }

@@ -38,8 +38,8 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"> 
         <property name="dataSource" ref="dataSource"></property>
         <!-- 映射mybatis配置文件 -->
-        <!-- <property name="configLocation" value="classpath:mybatis-config.xml"></property> --> 
-        <!-- 自动扫描mapping.xml文件 --> 
+        <property name="configLocation" value="classpath:mybatis-config.xml"></property> 
+        <!-- 自动扫描mapping.xml文件，映射数据库DML语法 --> 
         <property name="mapperLocations" value="classpath:mapping/*.xml"></property> 
     </bean>
     

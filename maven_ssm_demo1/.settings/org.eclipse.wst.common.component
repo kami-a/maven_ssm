@@ -5,6 +5,7 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/generated-sources/annotations"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/generated-sources/test-annotations"/>
         <property name="context-root" value="maven_ssm_demo1"/>
         <property name="java-output-path" value="/maven_ssm_demo1/target/classes"/>
     </wb-module>

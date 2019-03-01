@@ -8,9 +8,6 @@
 		<setting name="cacheEnabled" value="true"/>
 		<setting name="defaultStatementTimeout" value="3000"/>
 		<setting name="mapUnderscoreToCamelCase" value="true"/>
-		<!-- 代理 -->
-		<setting name="proxyFactory" value="CGLIB"/>
-		<setting name="lazyLoadingEnabled" value="true"/>
 	</settings>
 
 </configuration>

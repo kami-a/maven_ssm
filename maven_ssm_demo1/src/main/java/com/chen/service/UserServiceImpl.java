@@ -2,6 +2,8 @@ package com.chen.service;
 
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,17 +15,17 @@ import com.mysql.cj.util.StringUtils;
 public class UserServiceImpl implements UserService {
 	@Autowired
 	UserDao userDao;
-	
+	private static Logger logger = LogManager.getLogger(UserServiceImpl.class);
 	//实现登录
 	public User userLogin(String name, String password) throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println(name+" "+password);
 		if (StringUtils.isNullOrEmpty(name)) {
-			System.out.println("name can not be empty");
+			logger.info("name can not be empty");
 			return null;
 		}
 		if (StringUtils.isNullOrEmpty(password)) {
-			System.out.println("password can not be empty");
+			logger.info("password can not be empty");
 			return null;
 		}
 		User user=userDao.selectUserByName(name);
@@ -39,7 +41,7 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		System.out.println(user.toString());
 		if (user==null||"".equals(user.toString())) {
-			System.out.println("注册 账号密码不可为空");
+			logger.info("注册 账号密码不可为空");
 			return 0;
 		}
 		int a = userDao.insertUser(user);
